@@ -16,16 +16,16 @@ if TYPE_CHECKING:
     from app.tracking.token_tracker import TokenTracker
 
 
-def get_cache(request: Request) -> "SemanticCache":
+def get_cache(request: Request) -> SemanticCache:
     """Return the SemanticCache instance from application state."""
     return request.app.state.cache
 
 
-def get_dispatcher(request: Request) -> "Dispatcher":
+def get_dispatcher(request: Request) -> Dispatcher:
     """Return the Dispatcher instance from application state."""
     return request.app.state.dispatcher
 
 
-def get_tracker(request: Request) -> "TokenTracker":
+def get_tracker(request: Request) -> TokenTracker:
     """Return the TokenTracker instance from application state."""
     return request.app.state.tracker

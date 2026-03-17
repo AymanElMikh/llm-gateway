@@ -23,7 +23,7 @@ class CostRouter:
 
     def select(
         self,
-        strategy: "RoutingStrategy",
+        strategy: RoutingStrategy,
         prompt_tokens: int,
         current_spend: float,
         require_context: int = 0,

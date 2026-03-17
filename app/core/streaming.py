@@ -8,7 +8,8 @@ Implemented in Phase 6.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, AsyncIterator
+from collections.abc import AsyncIterator
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from app.tracking.token_tracker import TokenTracker
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
 
 async def stream_response(
     provider_stream: AsyncIterator[str],
-    tracker: "TokenTracker",
+    tracker: TokenTracker,
     request_id: str,
 ) -> AsyncIterator[str]:
     """Wrap a provider stream in the SSE envelope format.

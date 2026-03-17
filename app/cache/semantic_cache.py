@@ -25,8 +25,8 @@ class SemanticCache:
 
     def __init__(
         self,
-        redis_client: "aioredis.Redis",
-        settings: "Settings",
+        redis_client: aioredis.Redis,
+        settings: Settings,
     ) -> None:
         """Initialise with a Redis client and application settings."""
         self.redis = redis_client

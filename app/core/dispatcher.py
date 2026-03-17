@@ -7,7 +7,8 @@ Retries with exponential back-off are applied per-model before moving on.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, AsyncIterator
+from collections.abc import AsyncIterator
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from app.core.router import CostRouter
@@ -23,19 +24,19 @@ class Dispatcher:
 
     def __init__(
         self,
-        providers: dict[str, "LLMProvider"],
-        router: "CostRouter",
+        providers: dict[str, LLMProvider],
+        router: CostRouter,
     ) -> None:
         """Initialise with a provider registry and a cost router."""
         self.providers = providers
         self.router = router
 
-    async def dispatch(self, request: "GatewayRequest") -> str:
+    async def dispatch(self, request: GatewayRequest) -> str:
         """Dispatch a non-streaming request and return the generated text."""
         raise NotImplementedError("Implemented in Phase 4")
 
     async def dispatch_stream(
-        self, request: "GatewayRequest"
+        self, request: GatewayRequest
     ) -> AsyncIterator[str]:
         """Dispatch a streaming request and yield text chunks."""
         raise NotImplementedError("Implemented in Phase 4")

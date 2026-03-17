@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import uuid
-from enum import Enum
+from enum import StrEnum
 
 from pydantic import BaseModel, Field
 
 
-class RoutingStrategy(str, Enum):
+class RoutingStrategy(StrEnum):
     """Strategy used by CostRouter to select the target model."""
 
     CHEAPEST = "cheapest"

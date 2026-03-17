@@ -20,7 +20,7 @@ class TokenTracker:
     Implemented in Phase 7.
     """
 
-    def __init__(self, redis_client: "aioredis.Redis") -> None:
+    def __init__(self, redis_client: aioredis.Redis) -> None:
         """Initialise with a Redis client."""
         self.redis = redis_client
 
