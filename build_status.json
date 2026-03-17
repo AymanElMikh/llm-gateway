@@ -1,0 +1,17 @@
+{
+  "project": "llm-gateway",
+  "current_phase": 1,
+  "phases": {
+    "1":  { "name": "Scaffold & config",        "status": "in_progress" },
+    "2":  { "name": "Provider abstraction",     "status": "pending" },
+    "3":  { "name": "Cost router",              "status": "pending" },
+    "4":  { "name": "Dispatcher",               "status": "pending" },
+    "5":  { "name": "Semantic cache",           "status": "pending" },
+    "6":  { "name": "Streaming + API",          "status": "pending" },
+    "7":  { "name": "Observability",            "status": "pending" },
+    "8":  { "name": "Docker & local dev",       "status": "pending" },
+    "9":  { "name": "Nginx config",             "status": "pending" },
+    "10": { "name": "GitHub Actions CI/CD",     "status": "pending" },
+    "11": { "name": "VPS deployment scripts",   "status": "pending" }
+  }
+}
