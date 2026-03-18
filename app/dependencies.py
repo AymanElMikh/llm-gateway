@@ -6,14 +6,11 @@ populated during the lifespan startup in main.py.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
 from fastapi import Request
 
-if TYPE_CHECKING:
-    from app.cache.semantic_cache import SemanticCache
-    from app.core.dispatcher import Dispatcher
-    from app.tracking.token_tracker import TokenTracker
+from app.cache.semantic_cache import SemanticCache
+from app.core.dispatcher import Dispatcher
+from app.tracking.token_tracker import TokenTracker
 
 
 def get_cache(request: Request) -> SemanticCache:

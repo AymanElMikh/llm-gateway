@@ -4,6 +4,8 @@ All values are read from environment variables (or .env file).
 No secrets are ever hardcoded here.
 """
 
+from functools import lru_cache
+
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -14,7 +16,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
-        case_sensitive=False,
+        case_sensitive=True,
+        frozen=True,
     )
 
     # ── Provider API Keys ─────────────────────────────────────────
@@ -62,6 +65,7 @@ class Settings(BaseSettings):
     )
 
 
+@lru_cache
 def get_settings() -> Settings:
-    """Return a Settings instance (reads .env on first call)."""
+    """Return a cached Settings instance (reads .env once on first call)."""
     return Settings()

@@ -9,7 +9,7 @@ from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 import structlog
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.responses import JSONResponse
 
 from app.api.v1 import admin, chat
@@ -19,13 +19,12 @@ logger = structlog.get_logger(__name__)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+async def lifespan(app: FastAPI, settings : Settings = Depends(get_settings())) -> AsyncIterator[None]:
     """Manage application startup and shutdown.
 
     Startup initialises all shared resources and stores them on app.state.
     Shutdown releases connections cleanly.
     """
-    settings: Settings = get_settings()
 
     # Configure structured logging
     structlog.configure(
