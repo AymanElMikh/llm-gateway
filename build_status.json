@@ -1,11 +1,11 @@
 {
   "project": "llm-gateway",
-  "current_phase": 4,
+  "current_phase": 5,
   "phases": {
     "1":  { "name": "Scaffold & config",        "status": "complete" },
     "2":  { "name": "Provider abstraction",     "status": "complete" },
     "3":  { "name": "Cost router",              "status": "complete" },
-    "4":  { "name": "Dispatcher",               "status": "pending" },
+    "4":  { "name": "Dispatcher",               "status": "complete" },
     "5":  { "name": "Semantic cache",           "status": "pending" },
     "6":  { "name": "Streaming + API",          "status": "pending" },
     "7":  { "name": "Observability",            "status": "pending" },
